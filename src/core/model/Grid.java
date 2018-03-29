@@ -169,5 +169,6 @@ public class Grid {
                 notifyGameOver(null); // draw
             }
         }
+        System.out.println("PLACING JAVA");
     }
 }
