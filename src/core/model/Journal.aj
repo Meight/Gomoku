@@ -4,11 +4,10 @@ import core.Player;
 
 public aspect Journal {
 
-    pointcut NewPoint(int x, int y, Player player):
-            call(public void Grid.placeStone(int x, int y, Player player));
-
-    after(int x, int y, Player player): NewPoint(x,y,player){
-        System.out.println("PLACING ASPECT");
+    after(int x, int y, Player player): call(public void Grid.placeStone(int,int,Player)) && args(x,y,player){
+        System.out.println("X : " + x);
+        System.out.println("Y : " + y);
+        System.out.println("Player : " + player.getName());
     }
 
 }
