@@ -4,19 +4,19 @@ import javafx.scene.paint.Color;
 
 public aspect AdversaireJ {
 
-    private Player blue = new Player("Mr. bleu", Color.BLUE);
+    private Player green_player = new Player("Green player", Color.GREEN);
 
-    private Player red = new Player("Mr. rouge", Color.RED);
+    private Player blue_player = new Player("Blue Player", Color.BLUE);
 
     private boolean player = false;
 
     Player around() : call(Player getCurrentPlayer()) {
         if (!player) {
             player = true;
-            return blue;
+            return green_player;
         } else {
             player = false;
-            return red;
+            return blue_player;
         }
     }
 

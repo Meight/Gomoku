@@ -3,7 +3,6 @@ package core;
 import core.model.Spot;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +37,7 @@ public aspect FinJeuJ {
     }
 
     void around(int x, int y, Player player) : call(void placeStone(int, int, Player)) && args(x, y, player) {
-        if(gameOver) {
-            System.out.println("FIN DU JEU");
-        } else {
+        if(!gameOver) {
             proceed(x,y,player);
         }
 
