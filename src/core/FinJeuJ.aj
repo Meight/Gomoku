@@ -43,7 +43,6 @@ privileged public aspect FinJeuJ {
         if(!gameOver) {
             proceed(x,y,player);
         }
-
     }
 
 }
